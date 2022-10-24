@@ -22,10 +22,10 @@ services:
         - 5432:5432
       volumes:
         - ./postgresql/data:/var/lib/postgresql/data
-      environment:
-        POSTGRES_PASSWORD:db_pass
-        POSTGRES_DB:todolist
-        LANG:ja_JP.utf8
-        TZ:Asia/Tokyo
+      environment:  # psql -h localhost -U postgres #psqlで接続確認
+        - POSTGRES_PASSWORD:db_pass
+        - POSTGRES_DB:todolist
+        - LANG:ja_JP.utf8
+        - TZ:Asia/Tokyo
 
 
