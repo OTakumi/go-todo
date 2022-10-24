@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3'
 
 services:
     server: # service name
@@ -15,3 +15,17 @@ services:
         - TZ=Asia/Tokyo
       ports:
         - "8000:8000"
+    db:
+      image: postgres:15
+      container_name: postgres
+      ports:
+        - 5432:5432
+      volumes:
+        - ./postgresql/data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_PASSWORD:db_pass
+        POSTGRES_DB:todolist
+        LANG:ja_JP.utf8
+        TZ:Asia/Tokyo
+
+
