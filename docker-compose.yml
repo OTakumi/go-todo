@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+    server: # service name
+      container_name: server
+      build:
+        context: .
+        dockerfile: ./build/Dockerfile
+      volumes:
+        - ./:/go/src/github.com/go-todo
+      tty: true   # make containers persistent
+      env_file:
+        - ./build/.go_env
+      environment:
+        - TZ=Asia/Tokyo
+      ports:
+        - "8000:8000"
