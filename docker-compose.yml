@@ -32,5 +32,6 @@ services:
         - POSTGRES_PASSWORD=${DB_PASSWORD}
         - LANG=ja_JP.utf8
         - TZ=Asia/Tokyo
+      restart: always
 
 
