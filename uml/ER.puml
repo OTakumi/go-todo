@@ -1,0 +1,39 @@
+@startuml
+
+entity UserGroup {
+  *id: uid <<PK>>
+  --
+  name: string
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity User {
+  * id: uid <<PK>>
+  --
+  user_id: uid
+  name: string
+  email: string
+  password: string
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+entity Task {
+  * id: uid <<PK>>
+  --
+  task_id: uid
+  name: string
+  discription: string
+  assignee: user_id <<FK>>
+  status: string
+  startdate: datetime
+  duedate: datetime
+  created_at: timestamp
+  updated_at: timestamp
+}
+
+UserGroup ||-|{ User
+User ||--|{ Task
+
+@enduml
