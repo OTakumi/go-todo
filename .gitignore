@@ -67,3 +67,4 @@ lib*.pc
 /tmp_install/
 
 /postgresql/data/
+*.ps1
